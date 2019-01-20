@@ -35,7 +35,7 @@ int main()
     do
     {
         
-        std::cout << "How many credits is this class worth" << std::endl;
+        std::cout << "How many credits is class" << counter <<" worth" << std::endl;
             std::cin >> creds;
         
             std::cout << " " << std::endl;
