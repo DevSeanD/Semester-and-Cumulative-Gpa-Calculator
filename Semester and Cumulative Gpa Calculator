@@ -1,0 +1,120 @@
+//
+//  main.cpp
+//  Getting_back_into_it
+//
+//  Created by Sean on 1/8/19.
+//  Copyright © 2019 Sean. All rights reserved.
+//
+//
+//This program is designed to calculate semester gpa and cumulative gpa in a simplistic way
+//
+#include <iostream>
+
+void gpacalc (float x, float y)
+{
+	std::cout << x / y;
+}
+
+void cumcalc (float x, float y)
+{
+	std::cout << x / y; 
+}
+int main()
+{
+	int typecalc;
+	
+	do
+	{
+		std::cout << "Hello this program allows you to calculate either Semester gpa or Cumulative gpa" << std::endl;
+		std::cout << "	If you would like to calculate Semester gpa enter (1)" << std::endl;
+		std::cout << "	If you would like to calculate Cumulative gpa enter (2)" << std::endl;
+			std::cin >> typecalc;
+	
+	}while((typecalc > 2) || (typecalc < 1));
+	
+	if(typecalc == 1)
+	{
+		float classno;
+		float creds;
+		float grade;
+		float totalcreds = 0;
+		float gradepoints = 0;
+		int counter = 1;
+    
+		std::cout << "Hello, this program is desgined to calculate semester gpa" << std::endl;
+			std::cout << " " << std::endl;
+
+		std::cout << "How many classes are you taking this semester?" << std::endl;
+		std::cin >> classno;
+    
+			std::cout << " " << std::endl;
+    
+		do
+		{
+        
+			std::cout << "How many credits is class " << counter <<" worth" << std::endl;
+				std::cin >> creds;
+        
+				std::cout << " " << std::endl;
+        
+			std::cout << "What grade did earn in this class" << std::endl;
+				std::cin >> grade;
+        
+				std::cout << " " << std::endl;
+				std::cout << " " << std::endl;
+        
+        
+			if((((creds <= 6) && (creds > 0) && (grade <= 4.0) && (grade >=0))))//will only execute if the provided numbers are good data
+			{
+            
+			totalcreds += creds;
+        
+			gradepoints += grade * creds;
+       	
+            
+			counter++;
+			}
+        
+			else
+			{
+            std::cout << "please enter a valid number" << std::endl;
+			}
+        
+		}while(counter <= classno);//the loop continues untill the correct amout of classes have been stored
+	
+			std::cout << " " << std::endl;
+    
+			std::cout << "Your Semester Gpa is : "; gpacalc(gradepoints,totalcreds);//calls upon the gpacalc function to determin and print out the gpa 
+	
+	}	
+	if(typecalc == 2)
+	{
+		float totalsemesters;
+		float counter = 1;
+		float sem = 0;
+		float totalsemgpa = 0;
+		
+		do
+		{
+			std::cout << "How many semesters have you taken" << std::endl;
+				std::cin >> totalsemesters; 
+		}while((totalsemesters < 0)||(totalsemesters > 15)); 
+		
+		do
+		{
+			std::cout << "What was gpa from semester " << counter << std::endl;
+			std::cin >> sem;
+ 
+			if((sem <= 4.0) && (sem >= 0.0))
+			{
+				totalsemgpa += sem; 
+				counter++;
+			}
+			else 
+				std::cout << "Please enter a value between 0.0 and 4.0" << std::endl; 
+				
+		}while(totalsemesters >= counter);
+		
+		std::cout << "Your Cumulative gpa is "; cumcalc(totalsemgpa,totalsemesters); 
+	}
+}
