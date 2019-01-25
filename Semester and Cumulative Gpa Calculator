@@ -10,14 +10,14 @@
 //
 #include <iostream>
 
-void gpacalc (float x, float y)
+float gpacalc (float x, float y)
 {
-	std::cout << x / y;
+	return x / y;
 }
 
-void cumcalc (float x, float y)
+float cumcalc (float x, float y)
 {
-	std::cout << x / y; 
+	return x / y; 
 }
 int main()
 {
@@ -62,8 +62,7 @@ int main()
         
 				std::cout << " " << std::endl;
 				std::cout << " " << std::endl;
-        
-        
+                
 			if((((creds <= 6) && (creds > 0) && (grade <= 4.0) && (grade >=0))))//will only execute if the provided numbers are good data
 			{
             
@@ -76,15 +75,14 @@ int main()
 			}
         
 			else
-			{
-            std::cout << "please enter a valid number" << std::endl;
-			}
+				std::cout << "please enter a valid number" << std::endl;
+		
         
 		}while(counter <= classno);//the loop continues untill the correct amout of classes have been stored
 	
 			std::cout << " " << std::endl;
     
-			std::cout << "Your Semester Gpa is : "; gpacalc(gradepoints,totalcreds);//calls upon the gpacalc function to determin and print out the gpa 
+			std::cout << "Your Semester Gpa is : " << gpacalc(gradepoints,totalcreds);//calls upon the gpacalc function to determin and print out the gpa 
 	
 	}	
 	if(typecalc == 2)
@@ -118,6 +116,6 @@ int main()
 				
 		}while(totalsemesters >= counter);
 		
-		std::cout << "Your Cumulative gpa is "; cumcalc(totalsemgpa,totalsemesters); 
+		std::cout << "Your Cumulative gpa is " << cumcalc(totalsemgpa,totalsemesters); 
 	}
 }
