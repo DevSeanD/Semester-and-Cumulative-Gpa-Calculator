@@ -98,12 +98,15 @@ int main()
 		{
 			std::cout << "How many semesters have you taken" << std::endl;
 				std::cin >> totalsemesters; 
+			std::cout << " " << std::endl;
+				
 		}while((totalsemesters < 0)||(totalsemesters > 15)); 
 		
 		do
 		{
 			std::cout << "What was gpa from semester " << counter << std::endl;
-			std::cin >> sem;
+				std::cin >> sem;
+			std::cout << " " << std::endl;
  
 			if((sem <= 4.0) && (sem >= 0.0))
 			{
