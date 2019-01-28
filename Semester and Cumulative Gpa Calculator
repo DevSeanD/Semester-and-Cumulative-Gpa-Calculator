@@ -12,12 +12,12 @@
 
 float gpacalc (float x, float y)
 {
-	return x / y;
+	return x / y;//gradepoints / totalcredits
 }
 
 float cumcalc (float x, float y)
 {
-	return x / y; 
+	return x / y;//total semseter gpa / total semesters
 }
 int main()
 {
@@ -31,17 +31,17 @@ int main()
 		std::cout << "For Cumulative gpa enter (2)" << std::endl;
 			std::cin >> typecalc;
 	
-	}while((typecalc > 2) || (typecalc < 1));
+	}while((typecalc > 2) || (typecalc < 1));//will loop if values are not 1 or 2
 	
 	if(typecalc == 1)
 	{
-		float classno;
-		float creds;
-		float grade;
-		float totalcreds = 0;
-		float gradepoints = 0;
-		int counter = 1;
-    
+		float classno;//how many classes of the semester
+		float creds;//how many credits each class is worth
+		float grade;// what grade the earned
+		float totalcreds = 0;//total credits
+		float gradepoints = 0;//total gradepoints
+		int counter = 1;//starts with 1 
+	
 		std::cout << "Hello, this program is desgined to calculate semester gpa" << std::endl;
 			std::cout << " " << std::endl;
 
@@ -64,6 +64,7 @@ int main()
 				std::cout << " " << std::endl;
 				std::cout << " " << std::endl;
                 
+				
 			if((((creds <= 6) && (creds > 0) && (grade <= 4.0) && (grade >=0))))//will only execute if the provided numbers are good data
 			{
             
@@ -99,7 +100,7 @@ int main()
 				std::cin >> totalsemesters; 
 			std::cout << " " << std::endl;
 				
-		}while((totalsemesters < 0)||(totalsemesters > 15)); 
+		}while((totalsemesters < 0)||(totalsemesters > 15));//will loop if the number of semesters is less than zero or more than 15
 		
 		do
 		{
@@ -107,16 +108,18 @@ int main()
 				std::cin >> sem;
 			std::cout << " " << std::endl;
  
-			if((sem <= 4.0) && (sem >= 0.0))
+			if((sem <= 4.0) && (sem >= 0.0))//only allows values from 0 to 4
 			{
-				totalsemgpa += sem; 
+				totalsemgpa += sem;//adds gpa to total semseter gpa
 				counter++;
 			}
 			else 
 				std::cout << "Please enter a value between 0.0 and 4.0" << std::endl; 
 				
-		}while(totalsemesters >= counter);
+		}while(totalsemesters >= counter);//loops untill all the semester grades have been entered
 		
 		std::cout << "Your Cumulative gpa is " << cumcalc(totalsemgpa,totalsemesters); 
 	}
+	int a;// Stalls program after it has finished
+	std::cin >> a; 
 }
