@@ -58,14 +58,64 @@ int main()
         
 				std::cout << " " << std::endl;
         
-			std::cout << "What grade did earn in this class" << std::endl;
-				std::cin >> grade;
+			
         
+					std::cout << " " << std::endl;
+                std::cout << "What grade did earn in this class" << std::endl;
+				std::cout << "To enter the number to the right of the letter grade" << std::endl;
+				std::cout << "                         "<< std::endl; 
+				std::cout << "+-----------------------+" << std::endl;
+				std::cout << "| A+(1)   A(2)    A-(3)  |" << std::endl;
+				std::cout << "| B+(4)   B(5)    B-(6)  |" << std::endl;
+				std::cout << "| C+(7)   C(8)    C-(9)  |" << std::endl;
+				std::cout << "| D+(10)  D(11)   D-(12) |" << std::endl;
+				std::cout << "|         F(13)          |" << std::endl;
+				std::cout << "+-----------------------+" << std::endl;
+				std::cout << "                         "<< std::endl;
+					std::cin >> grade;
 				std::cout << " " << std::endl;
-				std::cout << " " << std::endl;
-                
 				
-			if((((creds <= 6) && (creds > 0) && (grade <= 4.0) && (grade >=0))))//will only execute if the provided numbers are good data
+				if (grade == 1){ // changes the input from the menu to a gpa value
+					grade = 4.3;
+				}
+				if (grade == 2){
+					grade = 4.0;
+				}
+				if (grade == 3){
+					grade = 3.7;
+				}
+				if (grade == 4){
+					grade = 3.3;
+				}
+				if (grade == 5){
+					grade = 3.0;
+				}
+				if (grade == 6){
+					grade = 2.7;
+				}
+				if (grade == 7){
+					grade = 2.3;
+				}
+				if (grade == 8){
+					grade = 2.0;
+				}
+				if (grade == 9){
+					grade = 1.7;
+				}
+				if (grade== 10){
+					grade = 1.3;
+				}
+				if (grade == 11){
+					grade= 1.0;
+				}
+				if (grade == 12){
+					grade = .07;
+				}
+				if (grade == 13){
+					grade = 0.0;
+				}
+		
+			if((((creds <= 6) && (creds > 0) && (grade <= 4.4) && (grade >= 0))))//will only execute if the provided numbers are good data
 			{
             
 			totalcreds += creds;
@@ -120,6 +170,6 @@ int main()
 		
 		std::cout << "Your Cumulative gpa is " << cumcalc(totalsemgpa,totalsemesters); 
 	}
-	int a;// Stalls program after it has finished
+	int a;// Stalls program after it has finished on some mechines without this snippet
 	std::cin >> a; 
 }
