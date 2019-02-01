@@ -1,6 +1,7 @@
 //
 //  main.cpp
-//  Getting_back_into_it
+//  Small_Projects
+// 	
 //
 //  Created by Sean on 1/8/19.
 //  Copyright © 2019 Sean. All rights reserved.
@@ -28,6 +29,7 @@ int main()
 		std::cout << "How would you like to calculate gpa?" << std::endl;
 			std::cout << " " << std::endl;
 		std::cout << "For Semester gpa enter (1)" << std::endl;
+		std::cout << "============================" << std::endl;
 		std::cout << "For Cumulative gpa enter (2)" << std::endl;
 			std::cin >> typecalc;
 	
@@ -41,39 +43,54 @@ int main()
 		float totalcreds = 0;//total credits
 		float gradepoints = 0;//total gradepoints
 		int counter = 1;//starts with 1 
+		
+		std::cout << " " <<std::endl; 
+		std::cout << "===================" << std::endl;
+		std::cout << "Semester Calculator" << std::endl;
+		std::cout << "===================" << std::endl;
+		
+		do
+		{
+			std::cout << "How many classes are you taking this semester?" << std::endl;
+				std::cin >> classno;
+			std::cout << " " << std::endl;
+			
+		}while((classno <= 0) || (classno >= 10));
+			
 	
-		std::cout << "Hello, this program is desgined to calculate semester gpa" << std::endl;
-			std::cout << " " << std::endl;
-
-		std::cout << "How many classes are you taking this semester?" << std::endl;
-		std::cin >> classno;
-    
-			std::cout << " " << std::endl;
-    
 		do
 		{
         
-			std::cout << "How many credits is class " << counter <<" worth" << std::endl;
+			do
+			{
+				std::cout << "How many credits is class " << counter <<" worth" << std::endl;
 				std::cin >> creds;
+				
+			}while((creds <= 0) || (creds >= 6));
         
 				std::cout << " " << std::endl;
-        
-			
-        
-					std::cout << " " << std::endl;
-                std::cout << "What grade did earn in this class" << std::endl;
+				std::cout << " " << std::endl;
+				
 				std::cout << "To enter the number to the right of the letter grade" << std::endl;
-				std::cout << "                         "<< std::endl; 
-				std::cout << "+-----------------------+" << std::endl;
-				std::cout << "| A+(1)   A(2)    A-(3)  |" << std::endl;
-				std::cout << "| B+(4)   B(5)    B-(6)  |" << std::endl;
-				std::cout << "| C+(7)   C(8)    C-(9)  |" << std::endl;
-				std::cout << "| D+(10)  D(11)   D-(12) |" << std::endl;
-				std::cout << "|         F(13)          |" << std::endl;
-				std::cout << "+-----------------------+" << std::endl;
-				std::cout << "                         "<< std::endl;
-					std::cin >> grade;
 				std::cout << " " << std::endl;
+				do
+				{
+					std::cout << "What grade did earn in this class?" << std::endl;
+					std::cout << "+-----------------------+" << std::endl;
+					std::cout << "| A+(1)   A(2)    A-(3)  |" << std::endl;
+					std::cout << "|                        |" << std::endl;
+					std::cout << "| B+(4)   B(5)    B-(6)  |" << std::endl;
+					std::cout << "|                        |" << std::endl;
+					std::cout << "| C+(7)   C(8)    C-(9)  |" << std::endl;
+					std::cout << "|                        |" << std::endl;
+					std::cout << "| D+(10)  D(11)   D-(12) |" << std::endl;
+					std::cout << "|                        |" << std::endl;
+					std::cout << "|         F(13)          |" << std::endl;
+					std::cout << "+-----------------------+" << std::endl;
+					std::cout << "                         "<< std::endl;
+						std::cin >> grade;
+					std::cout << " " << std::endl;
+				}while((grade <= 0) || (grade > 13));
 				
 				if (grade == 1){ // changes the input from the menu to a gpa value
 					grade = 4.3;
@@ -133,17 +150,22 @@ int main()
 		}while(counter <= classno);//the loop continues untill the correct amout of classes have been stored
 	
 			std::cout << " " << std::endl;
-    
+			
+			std::cout << "============================" << std::endl;
 			std::cout << "Your Semester Gpa is : " << gpacalc(gradepoints,totalcreds);//calls upon the gpacalc function to determin and print out the gpa 
-	
-	}	
+			std::cout << "============================" << std::endl;
+	}
 	if(typecalc == 2)
 	{
-		float totalsemesters;
-		float counter = 1;
-		float sem = 0;
+		float totalsemesters;//total amount of semesters
+		float counter = 1;// counter starts at one and represents the number of semesters
+		float semgpa = 0;// gpa for semester
 		float totalsemgpa = 0;
 		
+		std::cout << " " <<std::endl;
+		std::cout << "=====================" << std::endl;
+		std::cout << "Cumulative Calculator" << std::endl;
+		std::cout << "=====================" << std::endl;
 		do
 		{
 			std::cout << "How many semesters have you taken" << std::endl;
@@ -155,20 +177,21 @@ int main()
 		do
 		{
 			std::cout << "What was gpa from semester " << counter << std::endl;
-				std::cin >> sem;
+				std::cin >> semgpa;
 			std::cout << " " << std::endl;
  
-			if((sem <= 4.0) && (sem >= 0.0))//only allows values from 0 to 4
+			if((semgpa <= 4.0) && (semgpa >= 0.0))//only allows values from 0 to 4
 			{
-				totalsemgpa += sem;//adds gpa to total semseter gpa
+				totalsemgpa += semgpa;//adds gpa to total semseter gpa
 				counter++;
 			}
 			else 
 				std::cout << "Please enter a value between 0.0 and 4.0" << std::endl; 
 				
 		}while(totalsemesters >= counter);//loops untill all the semester grades have been entered
-		
-		std::cout << "Your Cumulative gpa is " << cumcalc(totalsemgpa,totalsemesters); 
+		std::cout << "============================" << std::endl;
+		std::cout << "Your Cumulative gpa is " << cumcalc(totalsemgpa,totalsemesters) << std::endl;
+		std::cout << "============================" << std::endl;
 	}
 	int a;// Stalls program after it has finished on some mechines without this snippet
 	std::cin >> a; 
