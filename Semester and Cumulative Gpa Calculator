@@ -76,7 +76,7 @@ int main()
 				do
 				{
 					std::cout << "What grade did earn in this class?" << std::endl;
-					std::cout << "+-----------------------+" << std::endl;
+					std::cout << "+------------------------+" << std::endl;
 					std::cout << "| A+(1)   A(2)    A-(3)  |" << std::endl;
 					std::cout << "|                        |" << std::endl;
 					std::cout << "| B+(4)   B(5)    B-(6)  |" << std::endl;
@@ -86,7 +86,7 @@ int main()
 					std::cout << "| D+(10)  D(11)   D-(12) |" << std::endl;
 					std::cout << "|                        |" << std::endl;
 					std::cout << "|         F(13)          |" << std::endl;
-					std::cout << "+-----------------------+" << std::endl;
+					std::cout << "+------------------------+" << std::endl;
 					std::cout << "                         "<< std::endl;
 						std::cin >> grade;
 					std::cout << " " << std::endl;
@@ -152,7 +152,7 @@ int main()
 			std::cout << " " << std::endl;
 			
 			std::cout << "============================" << std::endl;
-			std::cout << "Your Semester Gpa is : " << gpacalc(gradepoints,totalcreds);//calls upon the gpacalc function to determin and print out the gpa 
+			std::cout << "Your Semester Gpa is : " << gpacalc(gradepoints,totalcreds) << std::endl;//calls upon the gpacalc function to determin and print out the gpa 
 			std::cout << "============================" << std::endl;
 	}
 	if(typecalc == 2)
