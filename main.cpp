@@ -6,7 +6,6 @@
 //  Created by Sean on 1/8/19.
 //  Copyright © 2019 Sean. All rights reserved.
 //
-//
 //This program is designed to calculate semester gpa and cumulative gpa in a simplistic way
 //
 #include <iostream>
@@ -31,6 +30,7 @@ int main()
 		std::cout << "For Semester gpa enter (1)" << std::endl;
 		std::cout << "============================" << std::endl;
 		std::cout << "For Cumulative gpa enter (2)" << std::endl;
+			std::cout << " " << std::endl;
 			std::cin >> typecalc;
 	
 	}while((typecalc > 2) || (typecalc < 1));//will loop if values are not 1 or 2
@@ -57,7 +57,6 @@ int main()
 			
 		}while((classno <= 0) || (classno >= 10));
 			
-	
 		do
 		{
         
@@ -76,17 +75,17 @@ int main()
 				do
 				{
 					std::cout << "What grade did earn in this class?" << std::endl;
-					std::cout << "+------------------------+" << std::endl;
-					std::cout << "| A+(1)   A(2)    A-(3)  |" << std::endl;
-					std::cout << "|                        |" << std::endl;
-					std::cout << "| B+(4)   B(5)    B-(6)  |" << std::endl;
-					std::cout << "|                        |" << std::endl;
-					std::cout << "| C+(7)   C(8)    C-(9)  |" << std::endl;
-					std::cout << "|                        |" << std::endl;
-					std::cout << "| D+(10)  D(11)   D-(12) |" << std::endl;
-					std::cout << "|                        |" << std::endl;
-					std::cout << "|         F(13)          |" << std::endl;
-					std::cout << "+------------------------+" << std::endl;
+					std::cout << "+---------------------------+" << std::endl;
+					std::cout << "| A+ (1)   A (2)    A- (3)  |" << std::endl;
+					std::cout << "|                           |" << std::endl;
+					std::cout << "| B+ (4)   B (5)    B- (6)  |" << std::endl;
+					std::cout << "|                           |" << std::endl;
+					std::cout << "| C+ (7)   C (8)    C- (9)  |" << std::endl;
+					std::cout << "|                           |" << std::endl;
+					std::cout << "| D+ (10)  D (11)   D- (12) |" << std::endl;
+					std::cout << "|                           |" << std::endl;
+					std::cout << "|          F (13)           |" << std::endl;
+					std::cout << "+---------------------------+" << std::endl;
 					std::cout << "                         "<< std::endl;
 						std::cin >> grade;
 					std::cout << " " << std::endl;
@@ -151,10 +150,11 @@ int main()
 	
 			std::cout << " " << std::endl;
 			
-			std::cout << "============================" << std::endl;
+			std::cout << "==============================" << std::endl;
 			std::cout << "Your Semester Gpa is : " << gpacalc(gradepoints,totalcreds) << std::endl;//calls upon the gpacalc function to determin and print out the gpa 
-			std::cout << "============================" << std::endl;
+			std::cout << "==============================" << std::endl;
 	}
+	
 	if(typecalc == 2)
 	{
 		float totalsemesters;//total amount of semesters
@@ -190,7 +190,7 @@ int main()
 				
 		}while(totalsemesters >= counter);//loops untill all the semester grades have been entered
 		std::cout << "============================" << std::endl;
-		std::cout << "Your Cumulative gpa is " << cumcalc(totalsemgpa,totalsemesters) << std::endl;
+		std::cout << "Your Cumulative gpa is : " << cumcalc(totalsemgpa,totalsemesters) << std::endl;
 		std::cout << "============================" << std::endl;
 	}
 	int a;// Stalls program after it has finished on some mechines without this snippet
